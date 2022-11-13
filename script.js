@@ -166,24 +166,3 @@ const calcularTotal = () => {
 
 	precioFinal.innerHTML = `$${totalCompra}`
 }
-
-botonFinCompra.addEventListener("click", () => {
-	mostrarTitulosYBotones(toggles,"d-none");
-	finalizarCompra()
-})
-
-function finalizarCompra () {
-	finCompra.innerHTML = "";
-	const tarjetaFin = document.createElement("div");
-	tarjetaFin.classList.add("col-6");
-	tarjetaFin.innerHTML= `<h1>Completá tus datos:</h1>
-							<form>
-								<input type="text" placeholder="Nombre y Apellido"/>
-								<input type="text" placeholder="Teléfono"/>
-								<input type="text" placeholder="Dirección"/>
-								<input type="text" placeholder="Nombre y Apellido"/>
-								<input type="text" placeholder="Nombre y Apellido"/>
-								
-	`
-	finCompra.appendChild(tarjetaFin);
-}

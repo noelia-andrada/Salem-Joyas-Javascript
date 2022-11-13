@@ -57,52 +57,47 @@
 			</div>
 		</header>
 
-
-
 		<main class="container">
 
-			<h1 class="titulo_principal">Joyería</h1>
-				
-			<div class="section">
-				<select id="eleccionJoyeria">
-					<option value=""> Ver todos los productos</option>
-					<option value="Aros">Aros</option>
-					<option value="Collares">Collares</option>
-					<option value="Dijes">Dijes</option>
-					<option value="Anillos">Anillos</option>
-				</select>
-				<button id="btnBuscarJoyeria">Buscar</button>
-			</div>
+			<h1 class="titulo_principal">Para finalizar la compra, completá tus datos:</h1>
 
-			<div class="row">
-				<div id="contenedorProductos" class="card-group col col-8"></div>
+            <div id="contenedorDatosPrincipales">
 
-				<div class="parteDos col col col-4">
-					<button id="verCarrito" class="btn btn-outline-primary me-2 colorBoton toggles">Ver Carrito</button>
-					<button id="actualizarCarrito" class="btn btn-outline-primary me-2 colorBoton d-none toggles">Actualizar Carrito</button>
-					<button id="vaciarCarrito" class="btn btn-outline-primary me-2 colorBoton d-none toggles">Vaciar Carrito</button>
-					<a href="compra.html" class="botonFinCompra d-none toggles btn btn-outline-primary me-2 colorBoton">Finalizar Compra</a>
+                <form class="toggles">
+                    <div class="form-group">
+                        <label for="inputNombre">Nombre y apellido</label>
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Escribí tu nombre y apellido completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCP">Código Postal</label>
+                        <input type="text" class="form-control" id="inputCP" placeholder="Completá con 4 números solamente">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDireccion">Dirección</label>
+                        <input type="text" class="form-control" id="inputDireccion" placeholder="Usá la dirección donde querés recibir tu pedido">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Dirección de correo</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Escribí tu email">
+                    </div>
+                    <label for="inputEmail">Elegí la forma de pago:</label>
+                    <button id="btnTransferencia" type="submit" class="btn btn-primary">Transferencia</button>
+                    <button id="btnTarjeta" type="submit" class="btn btn-primary">Tarjeta de crédito o débito</button>
+                </form>
 
-					<h2 class="d-none toggles">Tu Carrito de Compras:</h2>
+                <div id="transferencia"></div>
+                <div id="tarjeta"></div>
+                
 
-					<div id="contenedorCarrito" class="row d-none toggles"></div>
+            </div>
 
-					<h3 class="d-none toggles">El total de la compra es de:</h3>
-					<h4 id="precioFinal" class="d-none toggles"></h4>
-
-					<h4 id="totalDescuentoId" class="d-none toggles"></h4>
-
-				</div>
-			</div>
-
-		</main>
+        </main>
 	    
-
 		<!-- Toastify -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 		<!-- JavaScript Bundle with Popper -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-		<script src="script.js"></script>
+		<script src="compra.js"></script>
 
 	</body>
 </html>
