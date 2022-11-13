@@ -1,66 +1,66 @@
 [
 	{
 		"id": 1,
-		"nombre":"Aros 'Alas'",
+		"nombre":"Aros Alas",
 		"precio": 7500,
 		"img":"./imagenes/aros_alas.jpg",
-		"descripcion": "Aros articulados de bronce, esmaltados.",
+		"descripcion": "Aros articulados de bronce, esmaltados en turquesa",
 		"cantidad":1,
-
+		"categoria": "Aros"
 	},
 	{
 		"id": 2,
-		"nombre":"Aros 'Drop'",
+		"nombre":"Aros Drop",
 		"precio": 6900,
 		"img":"./imagenes/aros_drop.jpg",
 		"descripcion": "Modernos pendientes móviles de plata 925 y cobre.",
 		"cantidad":1,
-
+		"categoria": "Aros"
 	},
 	{
 		"id": 3,
-		"nombre":"Collar 'Espirales'",
+		"nombre":"Collar Espirales",
 		"precio": 22000,
 		"img":"./imagenes/collar_espirales.jpg",
 		"descripcion": "Collar hecho en plata 925. 32 cms de largo. Único.",
 		"cantidad":1,
-
+		"categoria": "Collares"
 	},
 	{
 		"id": 4,
-		"nombre":"Collar 'Maggie'",
+		"nombre":"Collar Maggie",
 		"precio": 27000,
 		"img":"./imagenes/collar_maggie.jpg",
 		"descripcion": "Elegante collar de plata 925 y cobre. Piedra de Sodalita.",
 		"cantidad":1,
-
+		"categoria": "Collares"
 	},
 	{
 		"id": 5,
-		"nombre":"Anillo 'Paisaje'",
+		"nombre":"Anillo Paisaje",
 		"precio": 12000,
 		"img":"./imagenes/anillo_paisaje.jpg",
 		"descripcion": "Anillo de plata esterlina. Para ocasiones especiales.",
 		"cantidad":1,
-
+		"categoria": "Anillos"
 	},
 	{
 		"id": 6,
-		"nombre":"Anillo 'Meridolas'",
+		"nombre":"Anillo Meridolas",
 		"precio": 74000,
 		"img":"./imagenes/anillo_medirolas.jpg",
 		"descripcion": "Anillo de plata 925 y oro 18k. Imponente. Una pieza única.",
 		"cantidad":1,
-
+		"categoria": "Anillos"
 	},
 	{
 		"id": 7,
-		"nombre":"Dije 'Planetas'",
+		"nombre":"Dije Planetas",
 		"precio": 18000,
 		"img":"./imagenes/dije_planetas.jpg",
-		"descripcion": "Trio de dijes en bronce, cobre y plata 925.",
+		"descripcion": "Hermoso trio de dijes en bronce, cobre y plata 925.",
 		"cantidad":1,
-
+		"categoria": "Dijes"
 	},
 	{
 		"id": 8,
@@ -69,6 +69,6 @@
 		"img":"./imagenes/dije_geometrico.jpg",
 		"descripcion": "Dije de plata con 3 safiros rojizos-anaranjados.",
 		"cantidad":1,
-
+		"categoria": "Dijes"
 	}
 ]
