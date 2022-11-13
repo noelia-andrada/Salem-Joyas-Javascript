@@ -68,3 +68,8 @@ header {
   margin-top: 50px;
   margin-bottom: 50px; }
 
+#transferencia,
+#tarjeta {
+  margin: 4%;
+  font-family: 'Bebas Neue', cursive;
+}
