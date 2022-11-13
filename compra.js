@@ -1,4 +1,3 @@
-const contenedorDatosPrincipales = document.getElementById("contenedorDatosPrincipales");
 const inputNombre = document.getElementById("inputNombre");
 const inputCP = document.getElementById("inputCP");
 const inputDireccion = document.getElementById("inputDireccion");

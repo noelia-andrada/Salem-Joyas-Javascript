@@ -9,7 +9,6 @@ const botonFinCompra = document.getElementById("botonFinCompra");
 const toggles = document.querySelectorAll(".toggles");
 const precioFinal = document.getElementById("precioFinal");
 const finCompra = document.getElementById("finCompra");
-const totalConDescuento = document.getElementById("totalDescuentoId");
 
 let carrito = [];
 
@@ -113,9 +112,9 @@ function mostrarCarrito() {
 									<h3 class="card-title"> ${producto.nombre} </h3>
 									<p class="card-text"> $${producto.precio} </p>
 									<div class="d-flex justify-content-evenly">
-										<i class="bi bi-dash-lg"></i>
+										<button id="disminucionCantidad ${producto.id}" class="bi bi-dash-lg"></button>
 										<p class="card-text"> ${producto.cantidad} </p>
-										<i class="bi bi-plus-lg"></i>
+										<button id="aumentoCantidad ${producto.id}" class="bi bi-plus-lg"></button>
 									</div>
 									<button class="btn colorBoton" id="eliminar ${producto.id}">Eliminar producto</button>
 								</div>
@@ -125,6 +124,18 @@ function mostrarCarrito() {
 		const boton = document.getElementById(`eliminar ${producto.id}`);
 		boton.addEventListener("click", ()=> {
 			eliminarDelCarrito(producto.id);
+		})
+
+		const aumentoCantidad = document.getElementById(`aumentoCantidad ${producto.id}`);
+		aumentoCantidad.addEventListener("click", (e)=> {
+			e.preventDefault();
+			agregarAlCarrito(producto.id);
+		})
+
+		const disminucionCantidad = document.getElementById(`disminucionCantidad ${producto.id}`);
+		disminucionCantidad.addEventListener("click", (e)=> {
+			disminuirCantidad(producto.id);
+			e.preventDefault();
 		})
 
 	})
@@ -140,6 +151,21 @@ function eliminarDelCarrito(id){
 	carrito.splice(indice, 1);
 
 	mostrarCarrito();
+}
+
+//Funcion para disminuir cantidades de productos desde el carrito. O eliminarlas si llegan a cero cantidad.
+
+async function disminuirCantidad(id){
+	const response = await fetch("json/productos.json");
+	const info = await response.json();
+
+	const producto = info.find((producto)=> producto.id === id);
+	const productoEnCarrito = carrito.find((producto)=> producto.id === id);
+	if(productoEnCarrito.cantidad === 1) {
+		eliminarDelCarrito(producto.id);
+	}else{
+		productoEnCarrito.cantidad--;
+	}
 }
 
 //Función para vaciar todo el carrito. Y reestablecer los títulos y botones originales.

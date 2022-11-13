@@ -49,15 +49,9 @@ header {
   text-align: center; }
 
 .menu_y_carrito,
-.logo_img,
-.carrito_del_header {
+.logo_img {
   display: flex;
   justify-content: space-evenly; }
-
-.carrito_del_header {
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding-right: 5%; }
 
 .logo_img img {
   padding: 12%; }
@@ -68,8 +62,7 @@ header {
   margin-top: 50px;
   margin-bottom: 50px; }
 
-#transferencia,
-#tarjeta {
+#transferencia {
   margin: 4%;
   font-family: 'Bebas Neue', cursive;
 }
