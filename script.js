@@ -11,6 +11,10 @@ const finCompra = document.getElementById("finCompra");
 
 let carrito = [];
 
+if(localStorage.getItem("carrito")){
+	carrito= JSON.parse(localStorage.getItem("carrito"));
+}
+
 //Búsqueda de productos por categorías.
 
 function filtrarProducto(array) {
@@ -78,6 +82,7 @@ async function agregarAlCarrito(id){
 		mostrarCarrito();
 	}else{
 		carrito.push(producto);
+		localStorage.setItem("carrito", JSON.stringify(carrito));
 		mostrarCarrito();
 	}
 }
@@ -148,6 +153,8 @@ function eliminarDelCarrito(id){
 	carrito.splice(indice, 1);
 
 	mostrarCarrito();
+
+	localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
 //Funcion para disminuir cantidades de productos desde el carrito. O eliminarlas si llegan a cero cantidad.
@@ -162,6 +169,7 @@ async function disminuirCantidad(id){
 		eliminarDelCarrito(producto.id);
 	}else{
 		productoEnCarrito.cantidad--;
+		localStorage.setItem("carrito", JSON.stringify(carrito));
 		mostrarCarrito();
 	}
 }
