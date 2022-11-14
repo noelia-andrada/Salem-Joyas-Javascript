@@ -3,7 +3,6 @@ const eleccionJoyeria = document.getElementById("eleccionJoyeria");
 const btnBuscarJoyeria = document.getElementById("btnBuscarJoyeria");
 const contenedorCarrito = document.getElementById("contenedorCarrito");
 const verCarrito = document.getElementById("verCarrito");
-const actualizarCarrito = document.getElementById("actualizarCarrito");
 const vaciarCarrito = document.getElementById("vaciarCarrito");
 const botonFinCompra = document.getElementById("botonFinCompra");
 const toggles = document.querySelectorAll(".toggles");
@@ -46,7 +45,7 @@ function crearHTML(array) {
 				text: "Agregado al carrito",
 				className: "carrito",
 				style: {
-					background: "linear-gradient(to right, #00b09b, #96c93d)",
+					background: "linear-gradient(to right, #4d6cc6, #9aa8d0)",
 				}
 			}).showToast();
 
@@ -67,7 +66,6 @@ btnBuscarJoyeria.addEventListener("click",()=>{
 })
 
 //Función para uso de botón Agregar al Carrito.
-//Y otra para mostrar ciertos elementos al hacer click en un botón.
 
 async function agregarAlCarrito(id){
 	const response = await fetch("json/productos.json");
@@ -77,10 +75,14 @@ async function agregarAlCarrito(id){
 	const productoEnCarrito = carrito.find((producto)=> producto.id === id);
 	if(productoEnCarrito) {
 		productoEnCarrito.cantidad++;
+		mostrarCarrito();
 	}else{
 		carrito.push(producto);
+		mostrarCarrito();
 	}
 }
+
+//Función para mostrar y ocultar elementos de la página.
 
 function mostrarTitulosYBotones(array, clase){
 	array.forEach(element=>{
@@ -88,15 +90,12 @@ function mostrarTitulosYBotones(array, clase){
 	})
 }
 
+//Al tocar el botón Ver Carrito, muestra todos los elementos del carro de compras y oculta el botón Ver Carrito.
 
 verCarrito.addEventListener("click", ()=> {
 	mostrarCarrito();
 	mostrarTitulosYBotones(toggles,"d-none");
 	calcularTotal();
-})
-
-actualizarCarrito.addEventListener("click", ()=> {
-	mostrarCarrito();
 })
 
 //Función para ver los productos agregados al carrito.
@@ -127,15 +126,13 @@ function mostrarCarrito() {
 		})
 
 		const aumentoCantidad = document.getElementById(`aumentoCantidad ${producto.id}`);
-		aumentoCantidad.addEventListener("click", (e)=> {
-			e.preventDefault();
+		aumentoCantidad.addEventListener("click", ()=> {
 			agregarAlCarrito(producto.id);
 		})
 
 		const disminucionCantidad = document.getElementById(`disminucionCantidad ${producto.id}`);
-		disminucionCantidad.addEventListener("click", (e)=> {
+		disminucionCantidad.addEventListener("click", ()=> {
 			disminuirCantidad(producto.id);
-			e.preventDefault();
 		})
 
 	})
@@ -165,6 +162,7 @@ async function disminuirCantidad(id){
 		eliminarDelCarrito(producto.id);
 	}else{
 		productoEnCarrito.cantidad--;
+		mostrarCarrito();
 	}
 }
 
